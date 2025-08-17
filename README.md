@@ -15,20 +15,7 @@ The report captures the steps required to configure the environment, prepare the
 ---
 
 ## ii. Methodology
-```mermaid
-flowchart TD
-    A[Start] --> B[VM Preparation: Install Nginx & Configure NAT]
-    B --> C[Agent Installation: Hystax Agent + DKMS]
-    C --> D[Replication: Start & Wait for Synced]
-    D --> E[Migration Plan: Define Flavor & Network]
-    E --> F[Run Migration from Restore Point]
-    F --> G[Deployment: VM in EasyStack]
-    G --> H{Service Accessible?}
-    H -- Yes --> I[Migration Successful]
-    H -- No --> J[HTML Content Issue, but Migration Validated]
-    I --> K[End]
-    J --> K[End]
-```
+
 The migration was conducted in three primary phases:
 
 1. **Virtual Machine Preparation**  
@@ -45,7 +32,20 @@ The migration was conducted in three primary phases:
    - Initiated replication in Hystax Management Console.  
    - Created migration plan.  
    - Deployed migrated VM in EasyStack environment.  
-
+```mermaid
+flowchart TD
+    A[Start] --> B[VM Preparation: Install Nginx & Configure NAT]
+    B --> C[Agent Installation: Hystax Agent + DKMS]
+    C --> D[Replication: Start & Wait for Synced]
+    D --> E[Migration Plan: Define Flavor & Network]
+    E --> F[Run Migration from Restore Point]
+    F --> G[Deployment: VM in EasyStack]
+    G --> H{Service Accessible?}
+    H -- Yes --> I[Migration Successful]
+    H -- No --> J[HTML Content Issue, but Migration Validated]
+    I --> K[End]
+    J --> K[End]
+```
 ---
 
 ## 1. Initial Setup on Oracle VirtualBox
