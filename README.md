@@ -79,14 +79,14 @@ http://127.0.0.1:8080
 ### 1.3 Uploading HTML Content
 
 ```bash
-sudo cp /media/sf_iship/web-asg-iship.html /var/www/html/
-sudo chown www-data:www-data /var/www/html/web-asg-iship.html
+sudo cp /media/sf_file/web-asg-file.html /var/www/html/
+sudo chown www-data:www-data /var/www/html/web-asg-file.html
 ```
 
 Verified at:
 
 ```
-http://127.0.0.1:8080/web-asg-iship.html
+http://127.0.0.1:8080/web-asg-file.html
 ```
 
 ---
