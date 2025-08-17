@@ -1,7 +1,7 @@
 # Oracle VirtualBox to EasyStack via Hystax
 
 📄 [View Full Documentation]()  
-🌐 [Visit My HTML]()  
+🌐 [Visit My HTML](web-asg-file.html)  
 
 ## i. Introduction
 This document provides technical documentation of the migration process from an **Oracle VirtualBox virtual machine** to an **EasyStack environment** using **Hystax**.  
