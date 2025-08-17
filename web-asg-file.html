@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greds' Brew & Bean - Artisan Coffee</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c1810;
+            background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(44, 24, 16, 0.95);
+            color: #f5f1eb;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #8b4513;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d4a574;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #f5f1eb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: #d4a574;
+            color: #2c1810;
+            transform: translateY(-2px);
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(rgba(212, 165, 116, 0.1), rgba(139, 69, 19, 0.1));
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #2c1810;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #5d4037;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+            background: linear-gradient(45deg, #a0522d, #8b4513);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-color: #d4a574;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2c1810;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .menu-section {
+            background: rgba(44, 24, 16, 0.05);
+            padding: 3rem 0;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c1810;
+            margin-bottom: 2rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #d4a574;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .menu-item h4 {
+            color: #2c1810;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            color: #8b4513;
+            font-weight: bold;
+            float: right;
+        }
+
+        footer {
+            background: #2c1810;
+            color: #f5f1eb;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">☕ Greds' Brew & Bean</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero" id="home">
+            <h1>Welcome to Greds' Brew & Bean</h1>
+            <p>Where every cup tells a story of passion, quality, and the perfect blend of tradition and innovation.</p>
+            <a href="#menu" class="cta-button">Explore Our Menu</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Sustainably Sourced</h3>
+                <p>Our beans are ethically sourced from small farms around the world, ensuring fair trade and environmental responsibility.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Artisan Roasted</h3>
+                <p>Each batch is carefully roasted in-house by our master roasters to bring out the unique flavors of every bean.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🍳</div>
+                <h3>Expert Crafted</h3>
+                <p>Our skilled baristas create each drink with precision and care, ensuring the perfect cup every time.</p>
+            </div>
+        </section>
+
+        <section class="menu-section" id="menu">
+            <h2>Our Signature Drinks</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h4>Classic Espresso <span class="price">$2.50</span></h4>
+                    <p>Rich, bold, and perfectly extracted. The foundation of great coffee.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Vanilla Bean Latte <span class="price">$4.25</span></h4>
+                    <p>Smooth espresso with steamed milk and real vanilla bean.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Caramel Macchiato <span class="price">$4.50</span></h4>
+                    <p>Espresso with vanilla milk and caramel drizzle.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Cold Brew Float <span class="price">$3.75</span></h4>
+                    <p>Smooth cold brew with a scoop of vanilla ice cream.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Mocha Delight <span class="price">$4.00</span></h4>
+                    <p>Rich chocolate and espresso blend with whipped cream.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Seasonal Special <span class="price">$4.75</span></h4>
+                    <p>Ask your barista about our current seasonal creation!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>123 Coffee Street, Bean City, BC 12345</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>(555) 123-BREW</span>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <span>Mon-Sun: 6AM - 9PM</span>
+                </div>
+            </div>
+            <p>&copy; 2024 Greds' Brew & Bean Coffee Shop. Brewing happiness since 2024.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add subtle animation to menu items on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initially hide menu items for animation
+        document.querySelectorAll('.menu-item').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(item);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 24, 16, 0.98)';
+            } else {
+                header.style.background = 'rgba(44, 24, 16, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
