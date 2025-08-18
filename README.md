@@ -3,7 +3,7 @@
 [![Platform](https://img.shields.io/badge/platform-EasyStack%20%7C%20VirtualBox-lightgrey)](#)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-📄 [View Full Documentation]()  
+📄 [Glossary](GLOSSARY.md) 
 🌐 [Visit My HTML](web-asg-file.html)  
 
 ## i. Introduction
