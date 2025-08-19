@@ -73,7 +73,7 @@ Retrieve VM IP:
 ip a
 ```
 
-Returned: `inet 10.0.2.15/24`.
+Returned: `inet 10.x.x.x/24`.
 Direct access failed due to NAT configuration.
 
 ---
@@ -84,12 +84,12 @@ VirtualBox → **Settings → Network → NAT → Port Forwarding**
 
 | Host IP   | Host Port | Guest IP  | Guest Port |
 | --------- | --------- | --------- | ---------- |
-| 127.0.0.1 | 8080      | 10.0.2.15 | 80         |
+| 127.x.x.x | 8080      | 10.x.x.x | 80         |
 
 Accessed successfully at:
 
 ```
-http://127.0.0.1:8080
+http://127.x.x.x:8080
 ```
 
 ---
@@ -104,7 +104,7 @@ sudo chown www-data:www-data /var/www/html/web-asg-file.html
 Verified at:
 
 ```
-http://127.0.0.1:8080/web-asg-file.html
+http://127.x.x.x:8080/web-asg-file.html
 ```
 
 ---
@@ -154,10 +154,10 @@ Steps performed in **Hystax Management Console**:
 | **Flavor**        | 2C-4G (2 vCPU, 4 GB RAM)              |
 | **Port Name**     | port\_0                               |
 | **Port Subnet**   | ACME\_network\_default\_ipv4\_subnet  |
-| **Port IP**       | 10.0.2.15 (NAT IP in VirtualBox)      |
+| **Port IP**       | 10.x.x.x (NAT IP in VirtualBox)      |
 | **Target Subnet** | ACME\_network\_default\_ipv4\_subnet  |
-| **Subnet ID**     | fbe19c26-08f5-493a-8dd1-eaa888f9f12a  |
-| **Target CIDR**   | 10.10.10.0/24 (EasyStack destination) |
+| **Subnet ID**     | fbe19c26-08f5-493a-8dd1-xxxxxxxxxxx  |
+| **Target CIDR**   | 10.x.x.x/24 (EasyStack destination) |
 
 3. **Run Migration** → Selected latest restore point → Executed migration.
 4. Migrated VM appeared under **OpenStack Instances**.
