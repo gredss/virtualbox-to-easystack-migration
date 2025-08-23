@@ -123,6 +123,8 @@ Steps performed in **Hystax Management Console**:
 
 3. **Agent Type** → Chose **Internal Agent (Linux)**.
 
+![Offline Package](media/offline-package.png)
+
 4. **Agent Settings** → Configured machine identification, network subnet, and IP mapping.
 
 5. **Kernel Compatibility**
@@ -162,7 +164,10 @@ Steps performed in **Hystax Management Console**:
 | **Target CIDR**   | 10.x.x.x/24 (EasyStack destination) |
 
 3. **Run Migration** → Selected latest restore point → Executed migration.
-4. Migrated VM appeared under **OpenStack Instances**.
+
+![Validation](validation/flow.png)
+
+4. Migrated VM appeared under **EasyStack Instances**.
 
 ---
 
