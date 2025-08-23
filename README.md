@@ -8,6 +8,8 @@
 🌐 [Visit My HTML](web-asg-file.html)  
 
 ## i. Introduction
+![VirtualBox to EasyStack via Hystax](media/flow.png)
+
 This document provides technical documentation of the migration process from an **Oracle VirtualBox virtual machine** to an **EasyStack environment** using **Hystax**.  
 
 The purpose of this migration was to validate the feasibility of replicating workloads from a local virtualization environment to a cloud-based infrastructure while preserving functionality.  
