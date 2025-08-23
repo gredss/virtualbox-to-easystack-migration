@@ -165,8 +165,6 @@ Steps performed in **Hystax Management Console**:
 
 3. **Run Migration** → Selected latest restore point → Executed migration.
 
-![Validation](media/validation.png)
-
 4. Migrated VM appeared under **EasyStack Instances**.
 
 ---
